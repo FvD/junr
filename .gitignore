@@ -8,3 +8,5 @@ apitoken.R
 
 vignettes/*.R
 vignettes/*.html
+
+tests/temp.R
