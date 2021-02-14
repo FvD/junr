@@ -27,7 +27,7 @@ Below we use a test API Key so that all the examples will run. You may want to
 get your own API Key instead to run the examples below. Note that with Junar
 each URL has its own API key.
 
-```{r}
+```{r eval = false}
 library(junr)
 base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
 api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff" 
@@ -71,7 +71,7 @@ In the menu underneath the table you have an option to "Obtain GUID". This last
 option opens a pop-up showing the GUID "COMPR-PUBLI-DEL-MINIS" that we are
 going to use in the example below.
 
-```{r}
+```{r eval = false}
 data_guid <- "COMPR-PUBLI-DEL-MINIS"
 purchasing_data <- get_data(base_url, api_key, data_guid)
 ```
@@ -84,8 +84,8 @@ You may note that if you do not need to go to the web interface to get the GUID
 for any data sets of interest. With the function `list_guid()` as we used it
 above, we obtained the same information. 
 
-```{r}
-pres_list <-list_guid(base_url, api_key)
+```{r eval = false}
+pres_list <- list_guid(base_url, api_key)
 pres_list[3]
 ```
 
@@ -119,7 +119,7 @@ directly to numeric without removing the symbols and commas.
 There are two utilities to help cleaning the currency data: `clean_currency`
 and `get_currency_symbol`.  For example:
 
-```{r}
+```{r eval = false}
 currency_data <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
 currency_data$`Monto Adjudicado` <- clean_currency(currency_data$`Monto Adjudicado`)  
 ```

@@ -9,8 +9,6 @@ get_statsDS_Date(base_url, api_key, from, to)
 \arguments{
 \item{base_url}{The base URL of the Junar service}
 
-\item{api_key}{The user's API key for the Junar service}
-
 \item{from, to}{A date with the format dd/mm/yyyy.}
 }
 \description{

@@ -5,8 +5,10 @@ date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Acceder Datos Abiertos a Través del API de Junar}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Introducción
@@ -24,7 +26,7 @@ correspondiente para encontrar el URL base (`base_url`) y obtener un *API Key*
 para obtener acceso al API de Junar en [la página de Datos Abiertos Costa
 Rica](http://datosabiertos.presidencia.go.cr/developers/).
 
-```{r}
+```{r eval = false}
 library(junr)
 url_base <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
 api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff" 
@@ -66,7 +68,7 @@ del sitio de Datos Abiertos de Costa Rica hay una tabla con el titulo
 tabla existe la opción "obtener GUID". Esta última abre una ventana con el GUID
 "COMPR-PUBLI-DEL-MINIS" que vamos a usar aquí abajo.
 
-```{r}
+```{r eval = false}
 guid_datos <- "COMPR-PUBLI-DEL-MINIS"
 datos_compras <- get_data(url_base, api_key, guid_datos)
 ```
@@ -79,7 +81,7 @@ Observa que no necesitamos ir a la interfaz para buscar los GUID de los
 conjuntos de datos que nos interesan. Con la función `list_guid()` como la
 usamos arriba obtuvimos la misma información.
 
-```{r}
+```{r eval = false}
 datos_disponibles <- list_guid(url_base, api_key)
 datos_disponibles[3]
 ```
@@ -109,7 +111,7 @@ Texto y no números.
 Hay un para de utilidades para hacerlo `clean_currency` y `get_currency_symbol`.
 Por ejemplo:
 
-```{r}
+```{r eval = false}
 datos_con_divisas <- get_data(url_base, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
 datos_con_divisas$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
 ```

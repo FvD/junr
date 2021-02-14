@@ -4,8 +4,12 @@
 \alias{clean_currency}
 \title{Clean Currency Values}
 \usage{
-clean_currency(currency_column, currency_symbol_pos = 1,
-  thousand_separator = ",", decimal_separator = ".")
+clean_currency(
+  currency_column,
+  currency_symbol_pos = 1,
+  thousand_separator = ",",
+  decimal_separator = "."
+)
 }
 \arguments{
 \item{currency_column}{The column in the data frame that contains the
